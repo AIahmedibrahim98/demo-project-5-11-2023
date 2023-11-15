@@ -15,7 +15,8 @@
 
 <body>
     <header>
-        <!-- place navbar here -->
+        <a href="{{ route('users.index') }}">users index</a> <br>
+        <a target="_blank" href="{{ route('users.index') }}">users index</a> <br>
     </header>
     <main>
         <div class="table-responsive">

@@ -26,4 +26,10 @@ class TestController extends Controller
             echo "<h1>" . "No Job Yet" . "</h1>";
         }
     }
+
+
+    public function lec4()
+    {
+        return "lec4";
+    }
 }
