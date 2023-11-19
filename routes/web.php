@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\lec5Controller;
+use App\Http\Controllers\SalesController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -89,3 +91,7 @@ Route::prefix("users")->name('users.')->group(function () {
 });
 
 Route::view('lec4/new', 'lec4');
+Route::get('lec5/new', [lec5Controller::class, 'lec5_blade']);
+Route::get('lec5/com', [lec5Controller::class, 'com']);
+Route::get('lec5/table', [lec5Controller::class, 'lec5_table']);
+Route::get('sales', [SalesController::class, 'index'])->name('sales.index');
