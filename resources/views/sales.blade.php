@@ -3,6 +3,7 @@
 @section('title', 'Sales')
 
 @section('content')
+    {{ $name }}
     <div class="table-responsive">
         <table class="table table-light">
             <thead>

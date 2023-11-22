@@ -15,7 +15,15 @@ class SalesController extends Controller
             'maha' => ['jun' => 502300, 'feb' => 10423000, 'march' => 2234],
             'soha' => ['jun' => 5000, 'feb' => 10000423, 'march' => 4234],
         ];
+        $name = 'ahmed';
 
-        return view('sales', ['agents' => $agents]);
+        // return view('sales', ['agents' => $agents, 'name' => $name]);
+        /* return view('sales')
+            ->with('agents', $agents)
+            ->with('name', $name); */
+        /* return view('sales')
+            ->with(compact('agents'))
+            ->with(compact('name')); */
+        return view('sales', compact('agents'), compact('name'));
     }
 }
