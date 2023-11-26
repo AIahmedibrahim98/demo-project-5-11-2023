@@ -23,14 +23,13 @@ return new class extends Migration
             $table->float('price_f');
             $table->double('price_d');
 
-            $table->date('date');
+            $table->date('date')->unique();
             $table->dateTime('datetime');
             $table->year('year');
 
             $table->string('varchar', 200);
             $table->string('varchar2');
             $table->char('char');
-
             $table->tinyText('t_text');
             $table->text('text');
             $table->longText('l_text');
