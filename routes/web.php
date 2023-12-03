@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\HrController;
 use App\Http\Controllers\lec5Controller;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\TestController;
@@ -95,3 +96,5 @@ Route::get('lec5/new', [lec5Controller::class, 'lec5_blade']);
 Route::get('lec5/com', [lec5Controller::class, 'com']);
 Route::get('lec5/table', [lec5Controller::class, 'lec5_table']);
 Route::get('sales', [SalesController::class, 'index'])->name('sales.index');
+
+Route::get('hr/index', [HrController::class, 'index'])->name('hr.index');
