@@ -92,7 +92,7 @@ class HrController extends Controller
         $emps = DB::table('employees')->take(10)->skip(10)->orderBy('EMPLOYEE_ID')->get();
 
 
-        dd($emps);
+        // dd($emps);
         /* dd(DB::table('users')
             ->where('password', '123')
             ->where(function ($q) {
@@ -102,5 +102,45 @@ class HrController extends Controller
         /*  foreach ($emps as $emp) {
             echo "Name :" . $emp->FIRST_NAME .  ", Job: " . $emp->JOB_ID . "<br>";
         } */
+
+        // dd(DB::table('regions')->insert(['REGION_ID' => 800, 'REGION_NAME' => 'ins from QB']));
+
+        /* dd(DB::table('regions')->insert(
+            [
+                ['REGION_ID' => 9, 'REGION_NAME' => 'ins from QB 1'],
+                ['REGION_ID' => 10, 'REGION_NAME' => 'ins from QB 2']
+            ]
+        )); */
+
+        /* dd(DB::table('regions')->insertOrIgnore(
+            [
+                ['REGION_ID' => 9, 'REGION_NAME' => 'ins from QB 1'],
+                ['REGION_ID' => 10, 'REGION_NAME' => 'ins from QB 2'],
+                ['REGION_ID' => 55, 'REGION_NAME' => 'new ins from QB 2'],
+            ]
+        )); */
+
+        // INSERT INTO `regions`(`REGION_ID`, `REGION_NAME`) SELECT e.EMPLOYEE_ID,e.FIRST_NAME FROM employees e WHERE salary >10000;
+
+        // dd(DB::table('regions')->insertUsing(['REGION_ID', 'REGION_NAME'], DB::table('employees')->where('salary', '>', 8000)->select('EMPLOYEE_ID', 'FIRST_NAME')));
+        // dd(DB::table('regions')->where('REGION_ID', '>=', '100')->update(['REGION_NAME' => 'ahmed']));
+        // dd(DB::table('regions')->where('REGION_ID', '>=', '100')->delete());
+        // dd(DB::table('employees')->where('salary', '<', '3000')->increment('salary', 2000));
+
+        /* dd(DB::table('employees')->where('salary', '<', '4000')->increment(
+            'salary',
+            2000,
+            ['PHONE_NUMBER' => '02131321321']
+        )); */
+        DB::table('employees')->where('DEPARTMENT_ID', 80)->incrementEach([
+            'salary' => 10000,
+            'COMMISSION_PCT' => .5
+        ]);
+    }
+
+    public function employees()
+    {
+        $employees = DB::table('employees')->orderBy('DEPARTMENT_ID')->get();
+        return view('hr.employees', compact('employees'));
     }
 }

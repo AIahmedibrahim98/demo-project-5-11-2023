@@ -98,3 +98,4 @@ Route::get('lec5/table', [lec5Controller::class, 'lec5_table']);
 Route::get('sales', [SalesController::class, 'index'])->name('sales.index');
 
 Route::get('hr/index', [HrController::class, 'index'])->name('hr.index');
+Route::get('hr/employees', [HrController::class, 'employees'])->name('hr.employees');

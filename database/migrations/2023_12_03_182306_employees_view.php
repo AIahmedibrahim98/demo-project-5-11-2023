@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        DB::unprepared("CREATE or REPLACE VIEW emp_data as SELECT e.EMPLOYEE_ID , concat(e.FIRST_NAME,' ' ,e.LAST_NAME) as name , e.JOB_ID  from employees e;");
+        // DB::unprepared("CREATE or REPLACE VIEW emp_data as SELECT e.EMPLOYEE_ID , concat(e.FIRST_NAME,' ' ,e.LAST_NAME) as name , e.JOB_ID  from employees e;");
     }
 
     /**
@@ -20,6 +20,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        DB::unprepared("drop view emp_data");
+        // DB::unprepared("drop view emp_data");
     }
 };

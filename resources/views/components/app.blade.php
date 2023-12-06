@@ -13,7 +13,7 @@
 
 </head>
 
-<body>
+<body class="container mt-2">
     <header>
         <h1 class="text-primary text-center">{{ $header }}</h1>
     </header>
