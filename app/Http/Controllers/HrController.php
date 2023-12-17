@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -142,5 +143,20 @@ class HrController extends Controller
     {
         $employees = DB::table('employees')->orderBy('DEPARTMENT_ID')->get();
         return view('hr.employees', compact('employees'));
+    }
+
+
+    public function employees_model()
+    {
+        // $emp = Employee::all();
+        /* $emp = Employee::where('salary', '>', '5000')->where('DEPARTMENT_ID', '80')->orderBy('salary')->get();
+        foreach ($emp as $item) {
+            echo "- " . $item->LAST_NAME . ' - ' .  number_format($item->SALARY) . "<br>";
+        } */
+
+        // dd(Employee::where('EMPLOYEE_ID', 100)->first()->LAST_NAME);
+        // dd(Employee::firstWhere('EMPLOYEE_ID', 100)->LAST_NAME);
+        // dd(Employee::where('EMPLOYEE_ID', 100)->LAST_NAME);
+        // dd(Employee::find(100)->LAST_NAME);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CalculatorController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\HrController;
 use App\Http\Controllers\lec5Controller;
@@ -99,3 +100,12 @@ Route::get('sales', [SalesController::class, 'index'])->name('sales.index');
 
 Route::get('hr/index', [HrController::class, 'index'])->name('hr.index');
 Route::get('hr/employees', [HrController::class, 'employees'])->name('hr.employees');
+Route::get('hr/employees/model', [HrController::class, 'employees_model'])->name('hr.employees_model');
+
+
+Route::prefix('categories')->name('.categories')->group(function () {
+    Route::get('', [CategoryController::class, 'index'])->name('index');
+    Route::get('store', [CategoryController::class, 'store'])->name('store');
+    Route::get('update/{id}', [CategoryController::class, 'update'])->name('update');
+    Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('delete');
+});
