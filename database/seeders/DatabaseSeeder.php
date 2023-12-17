@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Customer;
+use App\Models\Task;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,12 +21,15 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        Customer::factory(500)->create();
 
 
-        /* $this->call([
+        $this->call([
             UserSeeder::class,
-            CategorySeeder::class
-        ]); */
+            CategorySeeder::class,
+            TaskTypeSeeder::class
+        ]);
+
+        Task::factory(500)->create();
+        // Customer::factory(500)->create();
     }
 }

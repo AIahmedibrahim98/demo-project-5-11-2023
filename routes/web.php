@@ -6,6 +6,7 @@ use App\Http\Controllers\HelloController;
 use App\Http\Controllers\HrController;
 use App\Http\Controllers\lec5Controller;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -109,3 +110,5 @@ Route::prefix('categories')->name('.categories')->group(function () {
     Route::get('update/{id}', [CategoryController::class, 'update'])->name('update');
     Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('delete');
 });
+
+Route::get('tasks/index', [TaskController::class, 'index'])->name('tasks.index');
