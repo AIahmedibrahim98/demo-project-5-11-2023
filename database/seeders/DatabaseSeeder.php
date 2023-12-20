@@ -26,10 +26,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             CategorySeeder::class,
-            TaskTypeSeeder::class
+            TaskTypeSeeder::class,
+            RoleSeeder::class
         ]);
 
         Task::factory(500)->create();
-        // Customer::factory(500)->create();
+        Customer::factory(500)->create();
     }
 }

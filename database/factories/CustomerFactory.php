@@ -25,6 +25,7 @@ class CustomerFactory extends Factory
             'country' => $this->faker->country(),
             'state' => $this->faker->streetName(),
             'email' => $this->faker->safeEmail(),
+            'company' => $this->faker->company(),
             'interests' => fake()->sentence(15),
             'gender' => $this->faker->randomElement(['male', 'female']),
         ];

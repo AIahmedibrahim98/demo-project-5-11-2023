@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('brith_date');
             $table->string('country');
             $table->string('state');
+            $table->string('company');
             $table->string('email');
             $table->text('interests');
             $table->enum('gender', ['male', 'female']);

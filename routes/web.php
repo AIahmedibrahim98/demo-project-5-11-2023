@@ -112,3 +112,7 @@ Route::prefix('categories')->name('.categories')->group(function () {
 });
 
 Route::get('tasks/index', [TaskController::class, 'index'])->name('tasks.index');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
